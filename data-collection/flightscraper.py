@@ -14,11 +14,6 @@ origin = sys.argv[1]				# Origin airport code
 destin = sys.argv[2]				# Destination airport code
 trDate = sys.argv[3]		# Date as 1st command line argument.
 
-""" The following is the Base Url for fetching data from MakeMyTrip Website.
-	This URL appears in the search bar after origin, destination and date inputs on the landing page.
-	Thus, this URL can be changed based on User Inputs and required data can be fetched.
-"""
-
 # url to display data
 baseDataUrl = "https://www.makemytrip.com/flight/search?itinerary="+ origin +"-"+ destin +"-"+ trDate +"&tripType=O&paxType=A-1_C-0_I-0&intl=true&cabinClass=E"
 
@@ -63,7 +58,7 @@ try:
 
 	# Data Headers
 	flightsData = []
-	flight_details = ["flight_name" , "flight_code", "departure_time", "departure_city", "flight_duration", "arrival_time", "arrival_city", "flight_cost", "layovers"]
+	flight_details = ["airlines" , "flight_details", "departure_time", "departure_city", "flight_duration", "arrival_time", "arrival_city", "flight_cost", "layovers"]
 
 	# Extracting data from tags and appending to main database flightsData
 	for j in range(0, len(spanFlightName)):
@@ -74,8 +69,8 @@ try:
 	
 	# Publishing Data to File
 	print("Writing flight data to file: "+ outputFile + " ...")
+    # Convert to pandas dataframe
 	flight_Df = pd.DataFrame(flightsData,columns=flight_details)
-	
 	flight_Df.to_csv("flight_data\\"+outputFile,index=False)
 
 except Exception as e:
