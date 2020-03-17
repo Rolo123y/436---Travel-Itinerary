@@ -71,7 +71,7 @@ try:
 	print("Writing flight data to file: "+ outputFile + " ...")
     # Convert to pandas dataframe
 	flight_Df = pd.DataFrame(flightsData,columns=flight_details)
-	flight_Df.to_csv("flight_data\\"+outputFile,index=False)
+	flight_Df.to_csv("data-collection\\flight_data\\"+outputFile,index=False)
 
 except Exception as e:
 	print (str(e))
