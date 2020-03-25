@@ -18,7 +18,6 @@ include "Nav.php";
 
 <body>
     <h1 class="header">Page 1</h1>
-    <a href="get_constraints.php">get_constraints</a>
 
     <div class="flex-container">
 
