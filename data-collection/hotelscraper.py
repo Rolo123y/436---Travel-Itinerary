@@ -56,7 +56,7 @@ def parse(locality,checkin_date,checkout_date,sort):
         XPATH_HOTEL_LINK = './/a[contains(@class,"property_title")]/@href'
         XPATH_REVIEWS  = './/a[@class="review_count"]//text()'
         XPATH_RANK = './/div[@class="popRanking"]//text()'
-        XPATH_RATING = './/span[contains(@class,"rating")]/@alt'
+        XPATH_RATING = './/a[contains(@data-clicksource,"BubbleRating")]/@alt'
         XPATH_HOTEL_NAME = './/a[contains(@class,"property_title")]//text()'
         XPATH_HOTEL_FEATURES = './/div[contains(@class,"common_hotel_icons_list")]//li//text()'
         XPATH_HOTEL_PRICE = './/div[contains(@data-sizegroup,"mini-meta-price")]/text()'
@@ -75,11 +75,11 @@ def parse(locality,checkin_date,checkout_date,sort):
 
         url = 'http://www.tripadvisor.com'+raw_hotel_link[0] if raw_hotel_link else  None
         reviews = ''.join(raw_no_of_reviews).replace("reviews","").replace(",","") if raw_no_of_reviews else 0 
-        rank = ''.join(raw_rank) if raw_rank else None
+        rank = float(''.join(raw_rank)) if raw_rank else None
         rating = ''.join(raw_rating).replace('of 5 bubbles','').strip() if raw_rating else None
         name = ''.join(raw_hotel_name).strip() if raw_hotel_name else None
         hotel_features = ','.join(raw_hotel_features)
-        price_per_night = ''.join(raw_hotel_price_per_night).replace('\n','') if raw_hotel_price_per_night else None
+        price_per_night = int(''.join(raw_hotel_price_per_night).replace('\n','').replace('$','')) if raw_hotel_price_per_night else None
         no_of_deals = re.findall("all\s+?(\d+)\s+?",''.join(raw_no_of_deals))
         booking_provider = ''.join(raw_booking_provider).strip() if raw_booking_provider else None
 
@@ -91,7 +91,7 @@ def parse(locality,checkin_date,checkout_date,sort):
         data = {
                     'hotel_name':name,
                     'url':url,
-                    'locality':locality,
+                    'city':locality,
                     'reviews':reviews,
                     'tripadvisor_rating':rating,
                     'checkOut':checkOut,
@@ -131,6 +131,7 @@ if __name__ == '__main__':
         data = parse(locality,checkin_date,checkout_date,sort)
         hotel_df = pd.DataFrame(data)
         hotel_df.to_csv(outputFile,index=False)
+        # print(hotel_df['tripadvisor_rating'])
 
     #checking whether the entered date is already passed
     elif today>datetime.strptime(checkIn,"%Y/%m/%d") or today>datetime.strptime(checkOut,"%Y/%m/%d"):
