@@ -1,3 +1,7 @@
+<?php
+include 'Nav.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,23 @@
 </head>
 
 <body>
-    <h1 class = "header">Sign Up Page</h1>
+    <h1 class="header">Sign Up Page</h1>
+
+    <?php
+    if (@$_GET['signupEmpty'] == true) {
+        echo "<div>";
+        echo $_GET['signupEmpty'];
+        echo "</div>";
+    }
+    ?>
+    <?php
+    if (@$_GET['signupFailed'] == true) {
+        echo "<div>";
+        echo $_GET['signupFailed'];
+        echo "</div>";
+    }
+    ?>
+
     <form action="includes/signup.php" method="POST">
         <input type="text" name="first" placeholder="Firstname">
         <br>
@@ -21,7 +41,7 @@
         <br>
         <input type="password" name="pwd" placeholder="password">
         <br>
-        <button type="submit" name="submit">Sign up</button>
+        <button type="submit" name="submit">Sign up!</button>
     </form>
 </body>
 

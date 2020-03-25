@@ -1,14 +1,28 @@
 <?php
-include_once 'dbconnect.php';
+session_start();
+include_once "dbconnect.php";
 
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
+if (isset($_POST['submit'])) {
+    if (empty($_POST['uid']) || empty($_POST['pwd'])) {
+        header("Location: ../index.php?Empty=Please fill in empty fields");
+    } else {
+        LogInCheck($_POST['uid'], $_POST['pwd'], $conn);
+    }
+}
 
-$sql = "SELECT * FROM users where user_email like " . $email . " AND user_pwd like " . $pwd . ";";
-$Result = mysqli_query($conn, $sql);
-$resulCheck = mysqli_num_rows($result);
+function LogInCheck($uid, $pwd, $conn)
+{
+    $uid_ = mysqli_real_escape_string($conn, $uid);
+    $pwd_ = mysqli_real_escape_string($conn, $pwd);
 
-if ($resulCheck > 0) {
-    include "SetSession.php";
-    header("Location: ../index.php?Login=success");
+    $sql = "SELECT * FROM users where user_uid LIKE '" . $uid_ . "' AND user_pwd LIKE '" . $pwd_ . "';";
+    $result = mysqli_query($conn, $sql);
+    $resulCheck = mysqli_num_rows($result);
+
+    if ($resulCheck > 0 && $resulCheck < 2) {
+        $_SESSION['user_uid'] = $uid;
+        header("Location: ../Page1_.php?Login=success");
+    } else {
+        header("Location: ../index.php?Empty=email or password incorrect. Try again!");
+    }
 }

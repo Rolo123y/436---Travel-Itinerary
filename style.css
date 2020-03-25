@@ -1,87 +1,149 @@
 body {
-    background-color: #92A8D1;
+    background-color: #F0FFFF;
 }
 
 .header {
-    font-family: 'Trebuchet MS';
+    margin-top: 2%;
 }
 
-button {
-    margin-top: 20px;
+
+/* NAV CSS  */
+
+.flex-Nav {
+    display: flex;
+    padding-bottom: 50px;
 }
 
-input {
-    font-family: 'Trebuchet MS';
-    text-align: center;
-}
-
-p {
-    font-family: 'Trebuchet MS';
-    text-align: center;
-    font-size: 60px;
-    font-family: Arial;
-    margin-top: 38vh;
-    color: white;
-    transition: 0.3s;
-}
-
-p:hover {
-    color: royalblue;
-    transform: scale(1.1);
-    border-radius: 50%;
-}
-
-.flex-container {
+.flex-Nav>ul {
     display: flex;
     flex-direction: row;
-}
-
-.nav_Style {
     background-color: white;
-    width: 100%;
+    position: fixed;
     overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
 }
 
-.nav_Style a {
-    font-family: 'Trebuchet MS';
+.flex-Nav>ul>a {
     float: left;
     padding: 12px;
     color: black;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     width: 25%;
     text-align: center;
     transition: 0.3s;
 }
 
-.nav_Style a:hover {
-    color: lightskyblue;
-    transform: scale(1.2);
+.flex-Nav>ul>a:hover {
+    color: blue;
+    transform: scale(1.1);
 }
 
-.table {
-    font-family: 'Trebuchet MS';
-    border: none;
-    width: 100%;
+
+/* END NAV CSS */
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    background-color: #F0FFFF;
+    margin-top: 10px;
+    border-style: none;
+    height: 600px;
 }
 
-.row_heading {
-    background: royalblue;
+
+/* CSS PAGE 1 */
+
+.flex_Page1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.flex_Page1>input {
     color: white;
+    background-color: dimgray;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    margin-top: 30px;
+    width: 400px;
+    height: 60px;
+    cursor: pointer;
+    font-size: x-large;
 }
 
-.row {
-    background: #fff;
+.flex_Page1>button {
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    margin-top: 30px;
+    width: 300px;
+    height: 80px;
+    cursor: pointer;
+    font-size: x-large;
+    transition: 0.3s;
 }
 
-.row:hover {
-    background-color: lightblue;
+.flex_Page1>button:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}
+
+.flex_Page1>select {
+    flex-direction: column;
+    text-align-last: center;
+    font-size: 1em;
+    margin: 10px 10px 10px 10px;
+    width: 250px;
+    height: 40px;
+}
+
+.flex_Page1>select:required:invalid {
+    color: gray;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
+#DepartureDate {
+    margin: 10px 10px 10px 10px;
+}
+
+#DepartureDate>input {
+    width: 225px;
+    height: 40px;
+}
+
+#DepartureDate>span:hover {
     cursor: pointer;
 }
 
-th,
-td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+#ArrivalDate {
+    margin: 10px 10px 10px 10px;
 }
+
+#ArrivalDate>input {
+    width: 225px;
+    height: 40px;
+}
+
+#ArrivalDate>span:hover {
+    cursor: pointer;
+}
+
+
+/* END CSS PAGE 1 */
