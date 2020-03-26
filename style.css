@@ -4,6 +4,19 @@ body {
 
 .header {
     margin-top: 2%;
+    text-align: center;
+    color: black;
+}
+
+.header>button {
+    position: absolute;
+    right: 10px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
 }
 
 
@@ -12,6 +25,7 @@ body {
 .flex-Nav {
     display: flex;
     padding-bottom: 50px;
+    margin-bottom: 20%;
 }
 
 .flex-Nav>ul {
@@ -48,15 +62,48 @@ body {
 
 .flex-container {
     display: flex;
-    justify-content: center;
     background-color: #F0FFFF;
-    margin-top: 10px;
+    justify-content: center;
+    position: fixed;
+    padding: 0;
+    margin: 5% 0 0 0;
+    top: 0;
+    left: 0;
     border-style: none;
-    height: 600px;
+    height: 100%;
+    width: 100%;
 }
 
 
-/* CSS PAGE 1 */
+/* CSS INDEX PAGE */
+
+.flex_Index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/* END CSS INDEX PAGE */
+
+
+/* CSS SIGNUP PAGE */
+
+.flex_Signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/* END CSS SIGNUP PAGE */
+
+
+/* CSS PAGE1_ */
 
 .flex_Page1 {
     display: flex;
@@ -146,4 +193,103 @@ option {
 }
 
 
-/* END CSS PAGE 1 */
+/* END CSS PAGE1_ */
+
+
+/* CSS PAGE2_ */
+
+.flex-container_Page2 {
+    display: flex;
+    background-color: #F0FFFF;
+    flex-direction: column;
+    position: fixed;
+    padding: 0;
+    margin: 5% 0 0 0;
+    top: 0;
+    left: 0;
+    border-style: none;
+    height: 100%;
+    width: 100%;
+}
+
+.flex_Page2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+.flex_Page2 select {
+    width: auto;
+    height: 40px;
+    margin: 10px 5px 5px 5px;
+    text-align: left;
+}
+
+.flex_Page2>input {
+    width: auto;
+    height: 40px;
+    margin: 10px 5px 5px 5px;
+    text-align: left;
+}
+
+.flex_Page2>select:required:invalid {
+    color: gray;
+}
+
+#DepartureDate_Page2 {
+    margin: 10px 10px 10px 10px;
+}
+
+#DepartureDate_Page2>input {
+    width: auto;
+    height: 40px;
+}
+
+#DepartureDate_Page2>span:hover {
+    cursor: pointer;
+}
+
+#ArrivalDate_Page2 {
+    margin: 10px 10px 10px 10px;
+}
+
+#ArrivalDate_Page2>input {
+    width: auto;
+    height: 40px;
+}
+
+#ArrivalDate_Page2s>span:hover {
+    cursor: pointer;
+}
+
+#Combinations_Page2 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Combinations_Page2 td,
+#Combinations_Page2 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#Combinations_Page2 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#Combinations_Page2 tr:hover {
+    background-color: #ddd;
+}
+
+#Combinations_Page2 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: dodgerblue;
+    color: white;
+}
+
+
+/* END CSS PAGE2_ */
