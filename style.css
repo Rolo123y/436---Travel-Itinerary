@@ -5,7 +5,7 @@ body {
 .header {
     margin-top: 2%;
     text-align: center;
-    color: black;
+    color: dimgrey;
 }
 
 .header>button {
@@ -132,7 +132,7 @@ body {
     border-radius: 4px;
     border: none;
     text-align: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     width: 300px;
     height: 80px;
     cursor: pointer;
@@ -218,6 +218,21 @@ option {
     align-items: flex-start;
     justify-content: left;
     margin-top: 10px;
+}
+
+.flex_Page2>button {
+    position: absolute;
+    right: 10px;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    width: auto;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: x-large;
 }
 
 .flex_Page2 select {

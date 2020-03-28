@@ -14,11 +14,9 @@ include "Nav.php";
 <body>
 
     <div class="flex-container_Page2">
-        <div>
-            <h1 class="header">Page 2
-                <button type="Submit" name="Submit">Continue</button>
-            </h1>
-        </div>
+        <!-- <div>
+            <h1 class="header">Page 2</h1>
+        </div> -->
 
         <div class="Page2_Center">
             <form action="includes/Page_2_Inputs.php" class="flex_Page2" method="POST">
@@ -45,11 +43,10 @@ include "Nav.php";
                 </script>
 
                 <select name="DepartureCity" required>
-                    <option value="" disabled selected>Select a Departure City</option>
-                    <option value="Volvo" <?php echo isset($_GET["DepartureCity"]) && $_GET["DepartureCity"] == "Volvo" ? "selected" : "" ?>>Volvo</option>
-                    <option value="Saab" <?php echo isset($_GET["DepartureCity"]) && $_GET["DepartureCity"] == "Saab" ? "selected" : "" ?>>Saab</option>
-                    <option value="Mercedes" <?php echo isset($_GET["DepartureCity"]) && $_GET["DepartureCity"] == "Mercedes" ? "selected" : "" ?>>Mercedes</option>
-                    <option value="Audi" <?php echo isset($_GET["DepartureCity"]) && $_GET["DepartureCity"] == "Audi" ? "selected" : "" ?>>Audi</option>
+                    <option value="" disabled selected>Departure City</option>
+                    <option value="Chicago" <?php echo isset($_GET["DepartureCity"]) && $_GET["DepartureCity"] == "Chicago" ? "selected" : "" ?>>Chicago</option>
+                    <option value="Chicago-Midway" <?php echo isset($_GET["DepartureCity"]) && $_GET["DepartureCity"] == "Chicago-Midway" ? "selected" : "" ?>>Chicago-Midway</option>
+                    <option value="Toronto" <?php echo isset($_GET["DepartureCity"]) && $_GET["DepartureCity"] == "Toronto" ? "selected" : "" ?>>Toronto</option>
                 </select>
 
                 <div id="ArrivalDate_Page2" class="input-group date" date-date-format="yyyy-mm-dd">
@@ -74,45 +71,51 @@ include "Nav.php";
                 </script>
 
                 <select name="DestinationCity" required>
-                    <option value="" disabled selected>Select a Destination City</option>
-                    <option value="Volvo" <?php echo isset($_GET["DestinationCity"]) && $_GET["DestinationCity"] == "Volvo" ? "selected" : "" ?>>Volvo</option>
-                    <option value="Saab" <?php echo isset($_GET["DestinationCity"]) && $_GET["DestinationCity"] == "Saab" ? "selected" : "" ?>>Saab</option>
-                    <option value="Mercedes" <?php echo isset($_GET["DestinationCity"]) && $_GET["DestinationCity"] == "Mercedes" ? "selected" : "" ?>>Mercedes</option>
-                    <option value="Audi" <?php echo isset($_GET["DestinationCity"]) && $_GET["DestinationCity"] == "Audi" ? "selected" : "" ?>>Audi</option>
+                    <option value="" disabled selected>Destination City</option>
+                    <option value="Chicago" <?php echo isset($_GET["DestinationCity"]) && $_GET["DestinationCity"] == "Chicago" ? "selected" : "" ?>>Chicago</option>
+                    <option value="Toronto" <?php echo isset($_GET["DestinationCity"]) && $_GET["DestinationCity"] == "Toronto" ? "selected" : "" ?>>Toronto</option>
                 </select>
 
                 <select name="NumOfPeople" required>
-                    <option value="" disabled selected>Select the number of people</option>
-                    <option value="Volvo" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "Volvo" ? "selected" : "" ?>>Volvo</option>
-                    <option value="Saab" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "Saab" ? "selected" : "" ?>>Saab</option>
-                    <option value="Mercedes" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "Mercedes" ? "selected" : "" ?>>Mercedes</option>
-                    <option value="Audi" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "Audi" ? "selected" : "" ?>>Audi</option>
+                    <option value="" disabled selected>number of people</option>
+                    <option value="1" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "1" ? "selected" : "" ?>>1</option>
+                    <option value="2" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "2" ? "selected" : "" ?>>2</option>
+                    <option value="3" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "3" ? "selected" : "" ?>>3</option>
+                    <option value="4" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "4" ? "selected" : "" ?>>4</option>
+                    <option value="5" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "5" ? "selected" : "" ?>>5</option>
+                    <option value="6" <?php echo isset($_GET["NumOfPeople"]) && $_GET["NumOfPeople"] == "6" ? "selected" : "" ?>>6</option>
                 </select>
 
                 <select name="FlightClass" required>
-                    <option value="" disabled selected>Select the Flight Class</option>
-                    <option value="Volvo" <?php echo isset($_GET["FlightClass"]) && $_GET["FlightClass"] == "Volvo" ? "selected" : "" ?>>Volvo</option>
-                    <option value="Saab" <?php echo isset($_GET["FlightClass"]) && $_GET["FlightClass"] == "Saab" ? "selected" : "" ?>>Saab</option>
-                    <option value="Mercedes" <?php echo isset($_GET["FlightClass"]) && $_GET["FlightClass"] == "Mercedes" ? "selected" : "" ?>>Mercedes</option>
-                    <option value="Audi" <?php echo isset($_GET["FlightClass"]) && $_GET["FlightClass"] == "Audi" ? "selected" : "" ?>>Audi</option>
+                    <option value="" disabled selected>Flight Class</option>
+                    <option value="B" <?php echo isset($_GET["FlightClass"]) && $_GET["FlightClass"] == "B" ? "selected" : "" ?>>B</option>
+                    <option value="E" <?php echo isset($_GET["FlightClass"]) && $_GET["FlightClass"] == "E" ? "selected" : "" ?>>E</option>
                 </select>
 
                 <select name="TypeOfVisit" required>
-                    <option value="" disabled selected>Select the type of visit</option>
-                    <option value="Volvo" <?php echo isset($_GET["TypeOfVisit"]) && $_GET["TypeOfVisit"] == "Volvo" ? "selected" : "" ?>>Volvo</option>
-                    <option value="Saab" <?php echo isset($_GET["TypeOfVisit"]) && $_GET["TypeOfVisit"] == "Saab" ? "selected" : "" ?>>Saab</option>
-                    <option value="Mercedes" <?php echo isset($_GET["TypeOfVisit"]) && $_GET["TypeOfVisit"] == "Mercedes" ? "selected" : "" ?>>Mercedes</option>
-                    <option value="Audi" <?php echo isset($_GET["TypeOfVisit"]) && $_GET["TypeOfVisit"] == "Audi" ? "selected" : "" ?>>Audi</option>
+                    <option value="" disabled selected>type of visit</option>
+                    <option value="Business" <?php echo isset($_GET["TypeOfVisit"]) && $_GET["TypeOfVisit"] == "Business" ? "selected" : "" ?>>Business</option>
+                    <option value="Pleasure" <?php echo isset($_GET["TypeOfVisit"]) && $_GET["TypeOfVisit"] == "Pleasure" ? "selected" : "" ?>>Pleasure</option>
+                </select>
+
+                <select name="tripfeatures" required>
+                    <option value="" disabled selected>type of feature</option>
+                    <option value="Adventure" <?php echo isset($_GET["tripfeatures"]) && $_GET["tripfeatures"] == "Adventure" ? "selected" : "" ?>>Adventure</option>
+                    <option value="cultural" <?php echo isset($_GET["tripfeatures"]) && $_GET["tripfeatures"] == "cultural" ? "selected" : "" ?>>cultural</option>
+                    <option value="ecotourism" <?php echo isset($_GET["tripfeatures"]) && $_GET["tripfeatures"] == "ecotourism" ? "selected" : "" ?>>ecotourism</option>
+                    <option value="water sports" <?php echo isset($_GET["tripfeatures"]) && $_GET["tripfeatures"] == "water sports" ? "selected" : "" ?>>water sports</option>
+
                 </select>
 
                 <input type="text" name="budget" placeholder="Enter your budget">
-
+                <button type="Submit" name="Submit">Continue</button>
             </form>
 
         </div>
 
-
-        <h2>Combinations</h2>
+        <h2 class="header">Combinations
+            <button type="Submit" name="Update">Update</button>
+        </h2>
 
         <table id="Combinations_Page2">
 

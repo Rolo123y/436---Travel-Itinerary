@@ -19,7 +19,7 @@ include "Nav.php";
 
     <div class="flex-container">
         <div>
-            <h1 class="header">Page 1</h1>
+            <h1 class="header">Please fill in the information below</h1>
             <form action="includes/Page_1_Inputs.php" class="flex_Page1" method="POST">
 
                 <div id="DepartureDate" class="input-group date" date-date-format="yyyy-mm-dd">
@@ -45,10 +45,9 @@ include "Nav.php";
 
                 <select name="DepartureCity" required>
                     <option value="" disabled selected>Select a Departure City</option>
-                    <option value="Volvo">Volvo</option>
-                    <option value="Saab">Saab</option>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Audi">Audi</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Chicago-Midway">Chicago-Midway</option>
+                    <option value="Toronto">Toronto</option>
                 </select>
 
                 <div id="ArrivalDate" class="input-group date" date-date-format="yyyy-mm-dd">
@@ -74,34 +73,38 @@ include "Nav.php";
 
                 <select name="DestinationCity" required>
                     <option value="" disabled selected>Select a Destination City</option>
-                    <option value="Volvo">Volvo</option>
-                    <option value="Saab">Saab</option>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Audi">Audi</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Toronto">Toronto</option>
                 </select>
 
                 <select name="NumOfPeople" required>
                     <option value="" disabled selected>Select the number of people</option>
-                    <option value="Volvo">Volvo</option>
-                    <option value="Saab">Saab</option>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Audi">Audi</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                 </select>
 
                 <select name="FlightClass" required>
                     <option value="" disabled selected>Select the Flight Class</option>
-                    <option value="Volvo">Volvo</option>
-                    <option value="Saab">Saab</option>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Audi">Audi</option>
+                    <option value="B">B</option>
+                    <option value="E">E</option>
                 </select>
 
                 <select name="TypeOfVisit" required>
                     <option value="" disabled selected>Select the type of visit</option>
-                    <option value="Volvo">Volvo</option>
-                    <option value="Saab">Saab</option>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Audi">Audi</option>
+                    <option value="Business">Business</option>
+                    <option value="Pleasure">Pleasure</option>
+                </select>
+
+                <select name="tripfeatures" required>
+                    <option value="" disabled selected>Select the type of feature</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="cultural">cultural</option>
+                    <option value="ecotourism">ecotourism</option>
+                    <option value="water sports">water sports</option>
                 </select>
 
                 <button type="Submit" name="Submit">Next</button>
