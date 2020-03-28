@@ -2,6 +2,6 @@
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
-$dbName = "loginSystem";
+$dbName = "r2nasim";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
