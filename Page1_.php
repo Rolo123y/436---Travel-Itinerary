@@ -15,6 +15,14 @@ include "Nav.php";
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 </head>
 
+<?php
+// Enable error logging: 
+error_reporting(E_ALL ^ E_NOTICE);
+// mysqli connection via user-defined function
+include ('./my_connect.php');
+$mysqli = get_mysqli_conn();
+?> -->
+
 <body>
 
     <div class="flex-container">
