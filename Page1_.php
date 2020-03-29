@@ -51,7 +51,7 @@ include "Nav.php";
                 </select>
 
                 <div id="ArrivalDate" class="input-group date" date-date-format="yyyy-mm-dd">
-                    <input type="text" name="ArrivalDate" placeholder="Select an Arrival Date">
+                    <input type="text" name="ArrivalDate" placeholder="Select a Return  Date">
                     <span class="input-group-addon">
                     </span>
                 </div>
@@ -93,18 +93,45 @@ include "Nav.php";
                     <option value="E">E</option>
                 </select>
 
-                <select name="TypeOfVisit" required>
+                <select id="TypeOfVisit" name="TypeOfVisit" onChange="changecat(this.value);" required>
                     <option value="" disabled selected>Select the type of visit</option>
                     <option value="Business">Business</option>
                     <option value="Pleasure">Pleasure</option>
                 </select>
 
-                <select name="tripfeatures" required>
+                <select name="tripfeatures" id="tripfeatures">
                     <option value="" disabled selected>Select the type of feature</option>
-                    <option value="Adventure">Adventure</option>
-                    <option value="cultural">cultural</option>
-                    <option value="ecotourism">ecotourism</option>
-                    <option value="water sports">water sports</option>
+                </select>
+
+                <script>
+                    var tripfeaturesbyType = {
+                        Business: [],
+                        Pleasure: ["Adventure", "cultural", "ecotourism", "water sports"]
+                    }
+
+                    function changecat(value) {
+                        if (value.length == 0) document.getElementById("tripfeatures").innerHTML = "<option></option>";
+                        else {
+                            var catOptions = "";
+                            for (tripfeaturesId in tripfeaturesbyType[value]) {
+                                catOptions += "<option>" + tripfeaturesbyType[value][tripfeaturesId] + "</option>";
+                            }
+                            document.getElementById("tripfeatures").innerHTML = catOptions;
+                        }
+                    }
+                </script>
+
+                <select id="Hotelrating" name="TypeOfVisit" onChange="changecat(this.value);" required>
+                    <option value="" disabled selected>Select a hotel rating</option>
+                    <option value="1">1</option>
+                    <option value="2">1.5</option>
+                    <option value="3">2</option>
+                    <option value="4">2.5</option>
+                    <option value="5">3</option>
+                    <option value="1">3.5</option>
+                    <option value="2">4</option>
+                    <option value="3">4.5</option>
+                    <option value="4">5</option>
                 </select>
 
                 <button type="Submit" name="Submit">Next</button>

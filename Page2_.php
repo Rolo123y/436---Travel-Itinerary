@@ -1,5 +1,6 @@
 <?php
 include "Nav.php";
+include "Combinations.php";
 ?>
 
 <head>
@@ -109,37 +110,67 @@ include "Nav.php";
 
                 <input type="text" name="budget" placeholder="Enter your budget">
                 <button type="Submit" name="Submit">Continue</button>
-            </form>
 
+            </form>
         </div>
 
-        <h2 class="header">Combinations
-            <button type="Submit" name="Update">Update</button>
-        </h2>
+        <form method="GET">
+            <h2 class="header">Combinations
+                <button type="Update" name="Update">Update</button>
+            </h2>
+        </form>
 
-        <table id="Combinations_Page2">
+        <?php
+        if (isset($_GET['Update'])) {
+            echo "<table id=" . '"Combinations_Page2"' . "";
+            echo "<tr>";
+            echo "<th>Departure date</th>";
+            echo "<th>Departure city</th>";
+            echo "<th>Arrival date</th>";
+            echo "<th>Destination city</th>";
+            echo "<th>Number of people</th>";
+            echo "<th>Flight class</th>";
+            echo "<th>Type of Visit</th>";
+            echo "<th>Trip Features</th>";
+            echo "</tr>";
 
-            <tr>
-                <th>Departure date</th>
-                <th>Departure city</th>
-                <th>Arrival date</th>
-                <th>Destination city</th>
-                <th>Number of people</th>
-                <th>Flight class</th>
-                <th>Type of Visit</th>
-            </tr>
+            echo "<tr>";
+            echo "<td>A</td>";
+            echo "<td>B</td>";
+            echo "<td>A</td>";
+            echo "<td>A</td>";
+            echo "<td>A</td>";
+            echo "<td>A</td>";
+            echo "<td>A</td>";
+            echo "<td>A</td>";
+            echo "</tr>";
+            echo "</table";
 
-            <tr>
-                <td>today</td>
-                <td>A</td>
-                <td>tomorrow</td>
-                <td>B</td>
-                <td>3</td>
-                <td>business</td>
-                <td>relaxing type</td>
-            </tr>
-
-        </table>
+            // while ($row = mysqli_fetch_array(GetCombinations(
+            //     $_GET['DepartureDate'],
+            //     $_GET['DepartureCity'],
+            //     $_GET['ArrivalDate'],
+            //     $_GET['DestinationCity'],
+            //     $_GET['NumOfPeople'],
+            //     $_GET['FlightClass'],
+            //     $_GET['TypeOfVisit'],
+            //     $_GET['tripfeatures'],
+            //     $conn
+            // ))) {
+            //     echo "<tr>";
+            //     echo "<td>" . $row['DepartureDate'] . "</td>";
+            //     echo "<td>" . $row['DepartureCity'] . "</td>";
+            //     echo "<td>" . $row['ArrivalDate'] . "</td>";
+            //     echo "<td>" . $row['DestinationCity'] . "</td>";
+            //     echo "<td>" . $row['NumOfPeople'] . "</td>";
+            //     echo "<td>" . $row['FlightClass'] . "</td>";
+            //     echo "<td>" . $row['TypeOfVisit'] . "</td>";
+            //     echo "<td>" . $row['tripfeatures'] . "</td>";
+            //     echo "</tr>";
+            // }
+            // mysqli_close($con);
+        }
+        ?>
 
     </div>
 

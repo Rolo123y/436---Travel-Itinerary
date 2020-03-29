@@ -4,3 +4,5 @@ if (isset($_POST['Submit'])) {
         "&ArrivalDate=" . $_POST['ArrivalDate'] . "&DestinationCity=" . $_POST['DestinationCity'] . "&NumOfPeople=" . $_POST['NumOfPeople'] .
         "&FlightClass=" . $_POST['FlightClass'] . "&TypeOfVisit=" . $_POST['TypeOfVisit']);
 }
+
+
