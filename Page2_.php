@@ -128,6 +128,7 @@ include "Combinations.php";
         $mysqli = get_mysqli_conn();
         ?>
 
+
         <?php
         // $flight_query = "SELECT s.airlines, s.departure_city, s.departure_time, s.arrival_city, s.arrival_time, s.flight_cost FROM flights s";
         // $sql = $flight_query;//add the clauses to the base query
@@ -247,6 +248,79 @@ include "Combinations.php";
         // }
         ?>
 
+
+        <div class="combination_div">
+            <table id="Combinations_Page2">
+
+                <th>Departure date</th>
+                <th>Departure city</th>
+                <th>Arrival date</th>
+                <th>Destination city</th>
+                <th>Number of people</th>
+                <th>Flight class</th>
+                <th>Type of Visit</th>
+                <th>Trip Features</th>
+
+                <tbody>
+                    <?php
+                    if (isset($_GET['Update'])) {
+                        // echo "<table id=" . '"Combinations_Page2"' . "";
+                        // echo "<tr>";
+                        // echo "<th>Departure date</th>";
+                        // echo "<th>Departure city</th>";
+                        // echo "<th>Arrival date</th>";
+                        // echo "<th>Destination city</th>";
+                        // echo "<th>Number of people</th>";
+                        // echo "<th>Flight class</th>";
+                        // echo "<th>Type of Visit</th>";
+                        // echo "<th>Trip Features</th>";
+                        // echo "</tr>";
+
+                        for ($i = 0; $i < 15; $i++) {
+                            echo "<tr>";
+                            echo "<td>A</td>";
+                            echo "<td>B</td>";
+                            echo "<td>A</td>";
+                            echo "<td>A</td>";
+                            echo "<td>A</td>";
+                            echo "<td>A</td>";
+                            echo "<td>A</td>";
+                            echo "<td>A</td>";
+                            echo "</tr>";
+                        }
+                        echo "</tbody>";
+                        echo "</table";
+
+
+
+
+
+                        // while ($row = mysqli_fetch_array(GetCombinations(
+                        //     $_GET['DepartureDate'],
+                        //     $_GET['DepartureCity'],
+                        //     $_GET['ArrivalDate'],
+                        //     $_GET['DestinationCity'],
+                        //     $_GET['NumOfPeople'],
+                        //     $_GET['FlightClass'],
+                        //     $_GET['TypeOfVisit'],
+                        //     $_GET['tripfeatures'],
+                        //     $conn
+                        // ))) {
+                        //     echo "<tr>";
+                        //     echo "<td>" . $row['DepartureDate'] . "</td>";
+                        //     echo "<td>" . $row['DepartureCity'] . "</td>";
+                        //     echo "<td>" . $row['ArrivalDate'] . "</td>";
+                        //     echo "<td>" . $row['DestinationCity'] . "</td>";
+                        //     echo "<td>" . $row['NumOfPeople'] . "</td>";
+                        //     echo "<td>" . $row['FlightClass'] . "</td>";
+                        //     echo "<td>" . $row['TypeOfVisit'] . "</td>";
+                        //     echo "<td>" . $row['tripfeatures'] . "</td>";
+                        //     echo "</tr>";
+                        // }
+                        // mysqli_close($con);
+                    }
+                    ?>
+        </div>
     </div>
 
 </body>
