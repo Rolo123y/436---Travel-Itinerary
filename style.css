@@ -3,7 +3,7 @@ body {
 }
 
 .header {
-    margin-top: 2%;
+    margin-top: 1%;
     text-align: center;
     color: dimgrey;
 }
@@ -17,6 +17,28 @@ body {
     border: none;
     text-align: center;
     cursor: pointer;
+}
+
+.Go-Back {
+    position: absolute;
+    left: 10px;
+    color: dodgerblue;
+    text-decoration: none !important;
+    font-size: x-large;
+}
+
+.ExportExcel {
+    position: absolute;
+    right: 10px;
+    background-color: Red !important;
+    color: white;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
 }
 
 
@@ -83,6 +105,25 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    height: 50%;
+}
+
+.flex_Index div button {
+    margin-top: 3px;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.flex_Index a {
+    color: dimgrey;
+    text-decoration: none;
+    font-size: x-large;
 }
 
 
@@ -97,6 +138,25 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    height: 50%;
+}
+
+.flex_Signup button {
+    margin-top: 3px;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.flex_Signup a {
+    color: dimgrey;
+    text-decoration: none;
+    font-size: x-large;
 }
 
 
@@ -121,7 +181,7 @@ body {
     text-align: center;
     margin-top: 30px;
     width: 400px;
-    height: 60px;
+    height: 30px;
     cursor: pointer;
     font-size: x-large;
 }
@@ -151,7 +211,7 @@ body {
     font-size: 1em;
     margin: 10px 10px 10px 10px;
     width: 250px;
-    height: 40px;
+    height: 35px;
 }
 
 .flex_Page1>select:required:invalid {
@@ -172,23 +232,23 @@ option {
 
 #DepartureDate>input {
     width: 225px;
-    height: 40px;
+    height: 35px;
 }
 
 #DepartureDate>span:hover {
     cursor: pointer;
 }
 
-#ArrivalDate {
+#ReturnDate{
     margin: 10px 10px 10px 10px;
 }
 
-#ArrivalDate>input {
+#ReturnDate>input {
     width: 225px;
-    height: 40px;
+    height: 35px;
 }
 
-#ArrivalDate>span:hover {
+#ReturnDate>span:hover {
     cursor: pointer;
 }
 
@@ -205,11 +265,10 @@ option {
     flex-direction: column;
     position: fixed;
     padding: 0;
-    margin-top: 5%;
     top: 0;
     left: 0;
     border-style: none;
-    height: 90%;
+    height: 100%;
     width: 100%;
 }
 
@@ -217,7 +276,7 @@ option {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: left;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -267,16 +326,16 @@ option {
     cursor: pointer;
 }
 
-#ArrivalDate_Page2 {
+#ReturnDate_Page2 {
     margin: 10px 10px 10px 10px;
 }
 
-#ArrivalDate_Page2>input {
+#ReturnDate_Page2>input {
     width: auto;
     height: 40px;
 }
 
-#ArrivalDate_Page2s>span:hover {
+#ReturnDate_Page2s>span:hover {
     cursor: pointer;
 }
 
@@ -287,6 +346,7 @@ option {
     width: 100%;
     height: fit-content;
     overflow-y: scroll;
+    overflow-x: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -320,6 +380,30 @@ option {
 
 #Combinations_Page2 tr:hover {
     background-color: #ddd;
+}
+
+.Hotel_Budget_Div {
+    display: flex;
+    justify-content: center;
+}
+
+.Hotel_Budget_Div select,
+.Hotel_Budget_Div input {
+    margin-right: 10px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+}
+
+.Hotel_Budget_Div button {
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    height: 40px;
 }
 
 

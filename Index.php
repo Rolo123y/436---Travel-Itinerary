@@ -24,14 +24,30 @@ include 'Nav.php';
     ?>
     <div class="flex-container">
         <div>
-            <h1 class="header">Log In</h1>
-            <form action="includes/Login.php" class="flex_Index" method="POST">
+
+            <form class="flex_Index" method="POST">
+                <h1 class="header">Log In</h1>
                 <input type="text" name="uid" placeholder="Username">
                 <br>
                 <input type="password" name="pwd" placeholder="Password">
                 <br>
-                <button type="submit" name="submit">Log In</button>
+                <div>
+                    <button type="submit" name="submit">Log In</button>
+                    <button type="Signup" name="Signup">Sign up</button>
+                </div>
+
+                <a href="Page1_.php">Skip</a>
             </form>
+
+            <?php
+            if (isset($_POST['submit'])) {
+                header("location: includes/Login.php");
+            }
+            if (isset($_POST['Signup'])) {
+                header("location: SignupPage.php");
+            }
+            ?>
+
         </div>
     </div>
 

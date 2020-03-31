@@ -16,6 +16,7 @@ include "Nav.php";
 </head>
 
 <body>
+ <h1 class="header">MSCI436 - Optimal Itinerary finder</h1>
 
     <div class="flex-container">
         <div>
@@ -46,19 +47,20 @@ include "Nav.php";
                 <select name="DepartureCity" required>
                     <option value="" disabled selected>Select a Departure City</option>
                     <option value="Chicago">Chicago</option>
-                    <option value="Chicago-Midway">Chicago-Midway</option>
                     <option value="Toronto">Toronto</option>
-                </select>
+                    <option value="Montreal">Montreal</option>
+                    <option value="Vancouver">Vancouver</option>                
+		</select>
 
-                <div id="ArrivalDate" class="input-group date" date-date-format="yyyy-mm-dd">
-                    <input type="text" name="ArrivalDate" placeholder="Select a Return  Date">
+                <div id="ReturnDate" class="input-group date" date-date-format="yyyy-mm-dd">
+                    <input type="text" name="ReturnDate" placeholder="Select a Return Date">
                     <span class="input-group-addon">
                     </span>
                 </div>
 
                 <script>
                     $(function() {
-                        $('#ArrivalDate').datepicker({
+                        $('#ReturnDate').datepicker({
                             format: "dd/mm/yyyy",
                             autoclose: true,
                             todayHighlight: true,
@@ -75,7 +77,9 @@ include "Nav.php";
                     <option value="" disabled selected>Select a Destination City</option>
                     <option value="Chicago">Chicago</option>
                     <option value="Toronto">Toronto</option>
-                </select>
+                    <option value="Montreal">Montreal</option>
+                    <option value="Vancouver">Vancouver</option>                
+		</select>
 
                 <select name="NumOfPeople" required>
                     <option value="" disabled selected>Select the number of people</option>
@@ -124,15 +128,15 @@ include "Nav.php";
                 <select id="Hotelrating" name="TypeOfVisit" onChange="changecat(this.value);" required>
                     <option value="" disabled selected>Select a hotel rating</option>
                     <option value="1">1</option>
-                    <option value="2">1.5</option>
-                    <option value="3">2</option>
-                    <option value="4">2.5</option>
-                    <option value="5">3</option>
-                    <option value="1">3.5</option>
-                    <option value="2">4</option>
-                    <option value="3">4.5</option>
-                    <option value="4">5</option>
-                </select>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                    <option value="3">3</option>
+                    <option value="3.5">3.5</option>
+                    <option value="4">4</option>
+                    <option value="4.5">4.5</option>
+                    <option value="5">5</option>                
+		</select>
 
                 <button type="Submit" name="Submit">Next</button>
             </form>

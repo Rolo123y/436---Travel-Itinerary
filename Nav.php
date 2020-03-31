@@ -15,7 +15,7 @@ include_once 'includes/dbconnect.php';
 
 <body>
 
-    <header>
+ <!-- <header>
         <nav class="flex-Nav">
             <ul>
                 <a href="index.php">Login page</a>
@@ -25,8 +25,7 @@ include_once 'includes/dbconnect.php';
                 <a href="Page3_.php">Page 3</a>
             </ul>
         </nav>
-    </header>
-
+    </header> -->
 </body>
 
 </html>
