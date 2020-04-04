@@ -27,3 +27,29 @@ CREATE TABLE `hotels` (
  `tripadvisor_rating` decimal(2,1) DEFAULT NULL,
  `url` varchar(143) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `adventure` (
+ `city` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `attraction` varchar(46) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `cultural` (
+ `city` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `attraction` varchar(41) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `ecotourism` (
+ `city` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `attraction` varchar(29) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `shopping` (
+ `city` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `attraction` varchar(31) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `water_sports` (
+ `city` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `attraction` varchar(41) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
