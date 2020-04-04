@@ -1,0 +1,29 @@
+CREATE TABLE `flights` (
+ `airlines` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `flight_details` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `departure_time` varchar(5) DEFAULT NULL,
+ `no_of_days` varchar(8) DEFAULT NULL,
+ `departure_city` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `departure_date` varchar(10) DEFAULT NULL,
+ `flight_duration` varchar(15) DEFAULT NULL,
+ `arrival_time` varchar(5) DEFAULT NULL,
+ `arrival_city` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `flight_cost` varchar(18) DEFAULT NULL,
+ `stops` int DEFAULT NULL,
+ `layovers` varchar(33) DEFAULT NULL,
+ `flight_class` varchar(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `hotels` (
+ `booking_provider` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `checkIn` varchar(10) DEFAULT NULL,
+ `checkOut` varchar(10) DEFAULT NULL,
+ `city` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `hotel_features` varchar(47) DEFAULT NULL,
+ `hotel_name` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ `no_of_deals` int DEFAULT NULL,
+ `price_per_night` int DEFAULT NULL,
+ `reviews` varchar(6) DEFAULT NULL,
+ `tripadvisor_rating` decimal(2,1) DEFAULT NULL,
+ `url` varchar(143) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
