@@ -16,7 +16,7 @@ the given constraints.
 
 This page is the main page which the user inputs the core constraints
 and then goes to Page2_.php
-![Image of Page1_](images/Page1_.png)
+![Image of Page1_](https://github.com/Rolo123y/436---Travel-Itinerary/blob/master/images/Page1_.PNG)
 
 
 ## Page2_
@@ -24,7 +24,7 @@ and then goes to Page2_.php
 This page recieves the constraints from Page1_ and outputs all the
 combinations currently in the database subject to the constraints.
 This page also includes extra constraints which then lead to Page3_.php.
-![Image of Page2_](images/Page2_.png)
+![Image of Page2_](https://github.com/Rolo123y/436---Travel-Itinerary/blob/master/images/Page2_.PNG)
 
 ## Page3_
 
@@ -32,4 +32,4 @@ This page displays the top 3 travel itieneriaries based on all of the
 constrains from both Page1_ and Page2_. Users are able to view prices of
 flights and hotels and total plan cost as well as click on links to view more 
 information about the hotel.
-![Image of Page3_](images/Page3_.png)
+![Image of Page3_](https://github.com/Rolo123y/436---Travel-Itinerary/blob/master/images/Page3_.PNG)
