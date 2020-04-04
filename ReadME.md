@@ -28,7 +28,7 @@ This page also includes extra constraints which then lead to Page3_.php.
 
 ## Page3_
 
-This page displays the top 3 travel itieneriaries based on all of the
+This page displays the top 10 travel itieneriaries based on all of the
 constrains from both Page1_ and Page2_. Users are able to view prices of
 flights and hotels and total plan cost as well as click on links to view more 
 information about the hotel.
