@@ -1,7 +1,6 @@
 # 436--Travel-Itinerary
 
-** This application was created as part of MSCI 436 by 
-Group 26 **
+** This application was created as part of MSCI 436
 
 It is often the case that people struggle to plan their trips.
 This tool allows for users to input contraints such as budget
