@@ -1,35 +1,79 @@
 <?php
 include "Nav.php";
+include "includes/optimization.php"
 ?>
 
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+
 <body>
-    <h1 class="header">Using the Database</h1>
+    
+<div class="flex-container_Page2">
+<h1 class="header">Your budget for <?php echo $_GET['NumOfPeople']." person(s) is:".$_GET['Budget'] ?>
+<a href="Page2_.php" class="Go-Back">&larr; Go Back</a>
+<button id="ExportExcel" name="ExportExcel" class = "ExportExcel">Export to Excel</button>
+</h1>
 
-    <div style="overflow-x:auto;">
-        <table class="table">
-            <tr class="row_heading">
-                <th>user_id </th>
-                <th>user_uid</th>
-                <th>user_pwd</th>
-            </tr>
+<div class="combination_div">
+            <table id="Combinations_Page2">
 
-            <?php
-            $sql = "SELECT * FROM users;";
-            $result = mysqli_query($conn, $sql);
-            $resulCheck = mysqli_num_rows($result);
-            if ($resulCheck > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr class=" . 'row' . ">";
-                    echo "<td>" . $row['user_id'] . "</td>";
-                    echo "<td>" . $row['user_uid'] . "</td>";
-                    echo "<td>" . $row['user_pwd'] . "</td>";
-                    echo "</tr>";
-                }
-            }
+                <th>Airline</th>
+		<th>Destination</th>
+                <th>Hotel Name</th>
+                <th>Hotel Rating</th>
+                <th>Check In Date</th>
+                <th>Check Out Date</th>
+                <th>Flight Cost per person</th>
+                <th>Hotel Cost per night</th>
+                <th>Total Cost</th>
+    <?php
 
-            ?>
-        </table>
+    $result = optimize(
+	$_GET['DepartureDate'],
+        $_GET['DepartureCity'],
+        $_GET['DestinationCity'],
+	$_GET['ReturnDate'],
+        $_GET['FlightClass'],
+	$_GET['NumOfPeople'],
+        $_GET['HotelRating'],
+        $_GET['flightBudgetSplit'],
+        $_GET['HotelBudgetSplit'],
+	$conn);
+
+    // echo mysqli_fetch($result)
+    while($row = mysqli_fetch_array($result)) {
+        echo "<tr>";
+        echo "<td>" . $row['flight_details'] . "</td>";
+        echo "<td>" . $row['arrival_city'] . "</td>";
+	echo "<td><a href=".$row['url'].">" . $row['hotel_name'] . "</a></td>";
+        echo "<td>" . $row['tripadvisor_rating'] . "</td>";
+        echo "<td>" . $row['checkIn'] . "</td>";
+        echo "<td>" . $row['checkOut'] . "</td>";
+        echo "<td>" . $row['flight_cost'] . "</td>";
+        echo "<td>" . $row['price_per_night'] . "</td>";
+        echo "<td>" . $row['total cost'] . "</td>";
+        echo "</tr>";
+    };
+    
+    mysqli_close($conn);            
+                ?>
+    	</table>
     </div>
-</body>
+    <h2 class="header">These are the 10 best combinations</h2>
+</div>
 
-</html>
+<script>
+ $(document).ready(function() {
+                $('#ExportExcel').click(function() {
+                    var excel_data = $('#Combinations_Page2').html();
+                    var page = "includes/excel.php?data=" + excel_data;
+                    window.location = page;
+                });
+            });
+</script>
+
+</body>

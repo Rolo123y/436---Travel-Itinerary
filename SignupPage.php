@@ -20,8 +20,9 @@ include 'Nav.php';
     ?>
     <div class="flex-container">
         <div>
-            <h1 class="header">Sign Up</h1>
+
             <form action="includes/signup.php" class="flex_Signup" method="POST">
+                <h1 class="header">Sign Up</h1>
                 <input type="text" name="first" placeholder="Firstname">
                 <br>
                 <input type="text" name="last" placeholder="Lastname">
@@ -34,7 +35,7 @@ include 'Nav.php';
                 <br>
                 <button type="submit" name="submit">Sign up!</button>
             </form>
-        </div>  
+        </div>
     </div>
 
 </body>
